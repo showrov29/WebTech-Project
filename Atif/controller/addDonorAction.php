@@ -98,7 +98,7 @@ if($_SERVER['REQUEST_METHOD']==="POST")
 
 if ($flag==0)
 {
-    $user=array("Fname"=>$First_name,"Lname"=>$Last_name, "mobile"=>$Phone, "email"=>$Email, "age"=>$Age,"Address"=>$Address ,"gender"=>$Gender,);
+    $user=array("Fname"=>$First_name,"Lname"=>$Last_name, "mobile"=>$Phone, "email"=>$Email, "age"=>$Age,"Address"=>$Address ,"gender"=>$Gender,"blood"=>$Blood);
 
     $handle = fopen("../Data/donorList.json","r");
 

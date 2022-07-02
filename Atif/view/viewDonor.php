@@ -1,5 +1,9 @@
-<?php
-	session_start();
+<?php 
+session_start();
+$username = $_SESSION['username'];
+	if (!isset($_SESSION['username'])) {
+		header("Location:login.php");
+	  } 
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,19 +26,21 @@ $arr1 = json_decode($fr);
 	echo "<tr>";
 		echo "<th>Fist Name </th>";
 		echo "<th>Last Name</th>";
-        echo "<th>Age</th>";
         echo "<th>Gender</th>";
         echo "<th>Email</th>";
         echo "<th>Mobile</th>";
+        echo "<th>Blood Group</th>";
+		echo "<th>Age</th>";
 		echo "</tr>";
 		for ($i=0; $i < count($arr1) ; $i++) {
 		echo "<tr>";
 			echo "<td>" . $arr1[$i]->Fname . "</td>";
 			echo "<td>" . $arr1[$i]->Lname . "</td>";
-            echo "<td>" . $arr1[$i]->age . "</td>";
             echo "<td>" . $arr1[$i]->gender . "</td>";
             echo "<td>" . $arr1[$i]->email . "</td>";
             echo "<td>" . $arr1[$i]->mobile . "</td>";
+			echo "<td>" . $arr1[$i]->blood . "</td>";
+			echo "<td>" . $arr1[$i]->age . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";

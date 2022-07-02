@@ -1,8 +1,9 @@
-<?php
-
-
-
-	session_start();
+<?php 
+session_start();
+$username = $_SESSION['username'];
+	if (!isset($_SESSION['username'])) {
+		header("Location:login.php");
+	  } 
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,6 +74,7 @@
                     echo '<h4>User "' . $uname . '" found</h4>';
                     echo"<br>";
                     echo" Click the Link below to continue ";
+					echo "<br>";
 					echo "<a href='".$link_address."'>Reset Password</a>";
 
 				}

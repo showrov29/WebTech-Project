@@ -1,5 +1,9 @@
 <?php 
-	session_start()
+session_start();
+$username = $_SESSION['username'];
+	if (!isset($_SESSION['username'])) {
+		header("Location:login.php");
+	  } 
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,6 +11,12 @@
 	<?php
 	
 	$username = $_SESSION['username'];
+	if (!isset($_SESSION['username'])) {
+		header("Location:login.php");
+	  } 
+
+
+	
 	$handle = fopen("../Data/User.json", "r");
 	$fr = fread($handle, filesize("../Data/User.json"));
 	$decode = json_decode($fr);

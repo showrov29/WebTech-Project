@@ -1,3 +1,11 @@
+<?php 
+session_start();
+$username = $_SESSION['username'];
+	if (!isset($_SESSION['username'])) {
+		header("Location:login.php");
+	  } 
+?>
+
 <!DOCTYPE html>  
 <title>Home Page</title>
 <?php include('templete/header.php')  ?> 
